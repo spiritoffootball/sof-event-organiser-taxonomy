@@ -1,20 +1,22 @@
 <?php
 /**
- * Plugin Name: SOF Event Organiser Taxonomy
- * Description: Provides a Custom Taxonomy for Event Organiser Events for Spirit of Football.
- * Version: 1.0
- * Author: Christian Wach
- * Author URI: https://haystack.co.uk
- * Text Domain: sof-event-organiser-taxonomy
- * Domain Path: /languages
+ * SOF Event Organiser Taxonomy
+ *
+ * Plugin Name:       SOF Event Organiser Taxonomy
+ * Description:       Provides a Custom Taxonomy for Event Organiser Events for Spirit of Football.
+ * Plugin URI:        https://github.com/spiritoffootball/sof-event-organiser-taxonomy
+ * GitHub Plugin URI: https://github.com/spiritoffootball/sof-event-organiser-taxonomy
+ * Version:           1.0
+ * Author:            Christian Wach
+ * Author URI:        https://haystack.co.uk
+ * Text Domain:       sof-event-organiser-taxonomy
+ * Domain Path:       /languages
  *
  * @package SOF_Event_Organiser_Taxonomy
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
-
 
 // Set our version here.
 define( 'SOF_EVENT_ORGANISER_TAXONOMY_VERSION', '1.0' );
@@ -28,12 +30,11 @@ if ( ! defined( 'SOF_EVENT_ORGANISER_TAXONOMY_FILE' ) ) {
 if ( ! defined( 'SOF_EVENT_ORGANISER_TAXONOMY_URL' ) ) {
 	define( 'SOF_EVENT_ORGANISER_TAXONOMY_URL', plugin_dir_url( SOF_EVENT_ORGANISER_TAXONOMY_FILE ) );
 }
+
 // Store PATH to this plugin's directory.
 if ( ! defined( 'SOF_EVENT_ORGANISER_TAXONOMY_PATH' ) ) {
 	define( 'SOF_EVENT_ORGANISER_TAXONOMY_PATH', plugin_dir_path( SOF_EVENT_ORGANISER_TAXONOMY_FILE ) );
 }
-
-
 
 /**
  * Main Plugin Class.
@@ -49,7 +50,7 @@ class SOF_Event_Organiser_Taxonomy {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The name of the Custom Post Type.
+	 * @var string
 	 */
 	public $post_type_name = 'event';
 
@@ -58,7 +59,7 @@ class SOF_Event_Organiser_Taxonomy {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_name The name of the Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_name = 'event-type';
 
@@ -67,7 +68,7 @@ class SOF_Event_Organiser_Taxonomy {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_rest_base The REST base of the Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_rest_base = 'event-type';
 
@@ -122,7 +123,7 @@ class SOF_Event_Organiser_Taxonomy {
 
 		// Only do this once.
 		static $done;
-		if ( isset( $done ) && $done === true ) {
+		if ( isset( $done ) && true === $done ) {
 			return;
 		}
 
@@ -179,10 +180,10 @@ class SOF_Event_Organiser_Taxonomy {
 		$args = [
 
 			// Same as "category".
-			'hierarchical' => true,
+			'hierarchical'      => true,
 
 			// Labels.
-			'labels' => [
+			'labels'            => [
 				'name'              => _x( 'Event Types', 'taxonomy general name', 'sof-event-organiser-taxonomy' ),
 				'singular_name'     => _x( 'Event Type', 'taxonomy singular name', 'sof-event-organiser-taxonomy' ),
 				'search_items'      => __( 'Search Event Types', 'sof-event-organiser-taxonomy' ),
@@ -198,17 +199,17 @@ class SOF_Event_Organiser_Taxonomy {
 			],
 
 			// Rewrite rules.
-			'rewrite' => [
+			'rewrite'           => [
 				'slug' => 'event-types',
 			],
 
 			// Show column in wp-admin.
 			'show_admin_column' => true,
-			'show_ui' => true,
+			'show_ui'           => true,
 
 			// REST setup.
-			'show_in_rest' => true,
-			'rest_base' => $this->taxonomy_rest_base,
+			'show_in_rest'      => true,
+			'rest_base'         => $this->taxonomy_rest_base,
 
 		];
 
@@ -228,7 +229,7 @@ class SOF_Event_Organiser_Taxonomy {
 	 * @since 1.0
 	 *
 	 * @param array $args The existing arguments.
-	 * @param int $post_id The WordPress post ID.
+	 * @param int   $post_id The WordPress post ID.
 	 */
 	public function taxonomy_fix_metabox( $args, $post_id ) {
 
@@ -256,27 +257,30 @@ class SOF_Event_Organiser_Taxonomy {
 		global $typenow;
 
 		// Bail if not our post type.
-		if ( $typenow != $this->post_type_name ) {
+		if ( $typenow !== $this->post_type_name ) {
 			return;
 		}
 
 		// Get tax object.
 		$taxonomy = get_taxonomy( $this->taxonomy_name );
 
-		// Show a dropdown.
-		wp_dropdown_categories( [
+		// Build args.
+		$args = [
 			/* translators: %s: The plural name of the taxonomy terms. */
 			'show_option_all' => sprintf( __( 'Show All %s', 'sof-event-organiser-taxonomy' ), $taxonomy->label ),
-			'taxonomy' => $this->taxonomy_name,
-			'name' => $this->taxonomy_name,
-			'orderby' => 'name',
+			'taxonomy'        => $this->taxonomy_name,
+			'name'            => $this->taxonomy_name,
+			'orderby'         => 'name',
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
-			'selected' => isset( $_GET[ $this->taxonomy_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_name ] ) : '',
-			'show_count' => true,
-			'hide_empty' => true,
-			'value_field' => 'slug',
-			'hierarchical' => 1,
-		] );
+			'selected'        => isset( $_GET[ $this->taxonomy_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_name ] ) : '',
+			'show_count'      => true,
+			'hide_empty'      => true,
+			'value_field'     => 'slug',
+			'hierarchical'    => 1,
+		];
+
+		// Show a dropdown.
+		wp_dropdown_categories( $args );
 
 	}
 
