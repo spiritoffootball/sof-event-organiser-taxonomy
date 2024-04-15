@@ -6,7 +6,7 @@
  * Description:       Provides a Custom Taxonomy for Event Organiser Events for Spirit of Football.
  * Plugin URI:        https://github.com/spiritoffootball/sof-event-organiser-taxonomy
  * GitHub Plugin URI: https://github.com/spiritoffootball/sof-event-organiser-taxonomy
- * Version:           1.0
+ * Version:           1.0.1a
  * Author:            Christian Wach
  * Author URI:        https://haystack.co.uk
  * Text Domain:       sof-event-organiser-taxonomy
@@ -19,7 +19,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Set our version here.
-define( 'SOF_EVENT_ORGANISER_TAXONOMY_VERSION', '1.0' );
+define( 'SOF_EVENT_ORGANISER_TAXONOMY_VERSION', '1.0.1a' );
 
 // Store reference to this file.
 if ( ! defined( 'SOF_EVENT_ORGANISER_TAXONOMY_FILE' ) ) {
