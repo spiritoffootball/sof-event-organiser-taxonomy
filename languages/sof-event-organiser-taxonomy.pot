@@ -1,4 +1,4 @@
-# Copyright (C) 2022 Christian Wach
+# Copyright (C) 2024 Christian Wach
 # This file is distributed under the same license as the SOF Event Organiser Taxonomy plugin.
 msgid ""
 msgstr ""
@@ -9,65 +9,87 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-06-24T09:40:00+00:00\n"
+"POT-Creation-Date: 2024-04-15T14:28:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: sof-event-organiser-taxonomy\n"
 
 #. Plugin Name of the plugin
+#: sof-event-organiser-taxonomy.php
 msgid "SOF Event Organiser Taxonomy"
 msgstr ""
 
+#. Plugin URI of the plugin
+#: sof-event-organiser-taxonomy.php
+msgid "https://github.com/spiritoffootball/sof-event-organiser-taxonomy"
+msgstr ""
+
 #. Description of the plugin
+#: sof-event-organiser-taxonomy.php
 msgid "Provides a Custom Taxonomy for Event Organiser Events for Spirit of Football."
 msgstr ""
 
 #. Author of the plugin
+#: sof-event-organiser-taxonomy.php
 msgid "Christian Wach"
 msgstr ""
 
 #. Author URI of the plugin
+#: sof-event-organiser-taxonomy.php
 msgid "https://haystack.co.uk"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:187
 msgctxt "taxonomy general name"
 msgid "Event Types"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:188
 msgctxt "taxonomy singular name"
 msgid "Event Type"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:189
 msgid "Search Event Types"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:190
 msgid "All Event Types"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:191
 msgid "Parent Event Type"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:192
 msgid "Parent Event Type:"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:193
 msgid "Edit Event Type"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:194
 msgid "Update Event Type"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:195
 msgid "Add New Event Type"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:196
 msgid "New Event Type Name"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:197
 msgid "Event Types"
 msgstr ""
 
+#: sof-event-organiser-taxonomy.php:198
 msgid "No Event Types found"
 msgstr ""
 
 #. translators: %s: The plural name of the taxonomy terms.
+#: sof-event-organiser-taxonomy.php:270
 msgid "Show All %s"
 msgstr ""
