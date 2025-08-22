@@ -4,9 +4,9 @@
  *
  * Plugin Name:       SOF Event Organiser Taxonomy
  * Description:       Provides a Custom Taxonomy for Event Organiser Events for Spirit of Football.
+ * Version:           1.0.1a
  * Plugin URI:        https://github.com/spiritoffootball/sof-event-organiser-taxonomy
  * GitHub Plugin URI: https://github.com/spiritoffootball/sof-event-organiser-taxonomy
- * Version:           1.0.1a
  * Author:            Christian Wach
  * Author URI:        https://haystack.co.uk
  * Text Domain:       sof-event-organiser-taxonomy
