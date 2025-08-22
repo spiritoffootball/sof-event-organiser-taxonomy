@@ -41,7 +41,10 @@
 	<!-- Nesting levels. -->
 	<rule ref="Generic.Metrics.NestingLevel">
 		<properties>
-			<property name="absoluteNestingLevel" value="4" />
+			<!-- Warning level. -->
+            <property name="nestingLevel" value="4"/>
+			<!-- Error level. -->
+			<property name="absoluteNestingLevel" value="5" />
 		</properties>
 	</rule>
 
