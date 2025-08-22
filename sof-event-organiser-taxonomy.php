@@ -83,7 +83,7 @@ class SOF_Event_Organiser_Taxonomy {
 		add_action( 'plugins_loaded', [ $this, 'initialise' ] );
 
 		// Load translation.
-		add_action( 'plugins_loaded', [ $this, 'translation' ] );
+		add_action( 'init', [ $this, 'translation' ] );
 
 	}
 
