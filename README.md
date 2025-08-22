@@ -6,6 +6,10 @@ Provides a Custom Taxonomy for Event Organiser Events for Spirit of Football.
 
 *SOF Event Organiser Taxonomy* is a WordPress plugin that provides a Custom Taxonomy for Event Organiser Events for Spirit of Football.
 
+The taxonomy is synced to a CiviCRM Custom Field by the [WPCV Custom Field Taxonomy Sync](https://github.com/WPCV/wpcv-tax-field-sync) plugin on:
+
+* The Ball 2022
+
 ### Requirements
 
 This plugin requires the following plugins:
